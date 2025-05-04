@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KulturaTrip - Jelajahi Keindahan Nusantara</title>
+    <!-- Tailwind CSS -->
+    <link href="src/style.css" rel="stylesheet">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- icon -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+</head>
+<body class="font-sans bg-[#181e1b] text-gray-100">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-[#232a27] text-gray-100 transition-all duration-300 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="text-xl font-bold text-[#eaff4b] tracking-wide">KulturaTrip</a>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-[#eaff4b] transition-colors">Beranda</a>
+                    <a href="#destination" class="hover:text-[#eaff4b] transition-colors">Destinasi</a>
+                    <a href="#gallery" class="hover:text-[#eaff4b] transition-colors">Galeri</a>
+                    <a href="#contact" class="hover:text-[#eaff4b] transition-colors">Kontak</a>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="hidden md:hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 py-4">
+                    <a href="#home" class="hover:text-[#eaff4b] transition-colors">Beranda</a>
+                    <a href="#destination" class="hover:text-[#eaff4b] transition-colors">Destinasi</a>
+                    <a href="#gallery" class="hover:text-[#eaff4b] transition-colors">Galeri</a>
+                    <a href="#contact" class="hover:text-[#eaff4b] transition-colors">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen overflow-hidden bg-[#232a27]">
+        <!-- Slider Container -->
+        <div class="slider-container absolute inset-0 w-full h-full">
+            <div class="slider-item absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/bg1.jpg')">
+            </div>
+            <div class="slider-item absolute inset-0 w-full h-full bg-cover bg-top transition-opacity duration-1000 opacity-0" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/bg2.jpg')">
+            </div>
+            <div class="slider-item absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/bg3.jpg')">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative container mx-auto px-4 h-full flex items-center justify-center">
+            <div class="text-center text-gray-100">
+                <h1 class="text-4xl md:text-6xl font-bold text-[#eaff4b] tracking-wide mb-4">Jelajahi Keindahan Indonesia</h1>
+                <p class="text-xl md:text-2xl mb-8">Temukan destinasi wisata terbaik di seluruh Nusantara</p>
+                <a href="#destination" class="bg-[#eaff4b] hover:bg-[#d4e900] text-[#232a27] font-bold py-3 px-6 rounded-lg transition-colors">Mulai Petualangan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinasi Section -->
+    <section id="destination" class="py-16 bg-[#232a27]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-[#eaff4b] tracking-wide mb-12">Destinasi Populer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-[#232a27] rounded-lg border-2 border-[#eaff4b] shadow-lg overflow-hidden transform transition-transform hover:-translate-y-2"
+                data-aos="fade-up"
+                data-aos-offset="100"
+                data-aos-duration="800"
+                data-aos-easing="ease-in-sine">
+                    <img src="assets/bg2.jpg" alt="Bali" class="w-full h-48 object-cover ">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#eaff4b] mb-2">Bali</h3>
+                        <p class="text-gray-100 mb-4">Pulau Dewata dengan pantai eksotis dan budaya yang kaya.</p>
+                        <a href="#" class="bg-[#eaff4b] hover:bg-[#d4e900] text-[#232a27] font-bold py-2 px-4 rounded transition-colors" onclick="openModal(0)">Selengkapnya</a>
+                    </div>
+                </div>
+                <div class="bg-[#232a27] rounded-lg border-2 border-[#eaff4b] shadow-lg overflow-hidden transform transition-transform hover:-translate-y-2"
+                data-aos="fade-down"
+                data-aos-offset="100"
+                data-aos-duration="800"
+                data-aos-easing="ease-in-sine">
+                    <img src="assets/yogya.jpg" alt="Yogyakarta" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#eaff4b] mb-2">Yogyakarta</h3>
+                        <p class="text-gray-100 mb-4">Kota budaya dengan warisan sejarah yang mengagumkan.</p>
+                        <a href="#" class="bg-[#eaff4b] hover:bg-[#d4e900] text-[#232a27] font-bold py-2 px-4 rounded transition-colors"  onclick="openModal(1)">Selengkapnya</a>
+                    </div>
+                </div>
+                <div class="bg-[#232a27] rounded-lg border-2 border-[#eaff4b] shadow-lg overflow-hidden transform transition-transform hover:-translate-y-2"
+                data-aos="fade-up"
+                data-aos-offset="100"
+                data-aos-duration="800"
+                data-aos-easing="ease-in-sine">
+                    <img src="assets/raja-ampat.jpg" alt="Raja Ampat" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#eaff4b] mb-2">Raja Ampat</h3>
+                        <p class="text-gray-100 mb-4">Surga bawah laut dengan keanekaragaman hayati yang luar biasa.</p>
+                        <a href="#" class="bg-[#eaff4b] hover:bg-[#d4e900] text-[#232a27] font-bold py-2 px-4 rounded transition-colors"  onclick="openModal(2)">Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal for destination description -->
+            <div id="destinationModal" class="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+                <div class="bg-[#232a27] rounded-lg border-2 border-[#eaff4b] max-w-lg w-full relative">
+                <img id="modalImg" alt="" class="w-full h-48 object-cover rounded-t-md border-b-2 border-[#eaff4b]">
+                <div class="px-8 py-4">
+                    <button onclick="closeModal()" class="absolute top-0.5 right-2 text-gray-100 hover:text-[#eaff4b] text-2xl bg-black/50 w-8 h-8 pb-1 rounded-full flex items-center justify-center">&times;</button>
+                    <h3 id="modalTitle" class="text-2xl font-bold text-[#eaff4b] mb-4"></h3>
+                    <p id="modalDesc" class="text-gray-100"></p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Section -->
+    <section id="gallery" class="py-16 bg-[#232a27]">
+        <div class="container mx-auto px-4 ">
+            <h2 class="text-3xl font-bold text-center text-[#eaff4b] tracking-wide mb-12" 
+                data-aos="fade-down"
+                data-aos-duration="800">Galeri Foto</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="relative group" 
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-delay="100">
+                    <img src="assets/galeri1.jpg" alt="Galeri 1" class="rounded-lg shadow-lg w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
+                        <p class="text-gray-100 text-lg font-semibold">Pura Tanah Lot, Bali</p>
+                    </div>
+                </div>
+                <div class="relative group"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="200">
+                    <img src="assets/galeri2.jpg" alt="Galeri 2" class="rounded-lg shadow-lg w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
+                        <p class="text-gray-100 text-lg font-semibold">Candi Prambanan, Yogyakarta</p>
+                    </div>
+                </div>
+                <div class="relative group"
+                    data-aos="fade-down" 
+                    data-aos-duration="1000"
+                    data-aos-delay="300">
+                    <img src="assets/galeri3.jpg" alt="Galeri 3" class="rounded-lg shadow-lg w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
+                        <p class="text-gray-100 text-lg font-semibold">Pulau Komodo, NTT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="about" class="py-8 md:py-16 bg-[#121815]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-[#eaff4b] tracking-wide mb-8 md:mb-12" 
+                data-aos="fade-down"
+                data-aos-duration="800">Tentang Kami</h2>
+            <div class="flex flex-col items-center w-full md:w-3/4 lg:w-1/2 mx-auto px-4 space-y-4">
+                <div class="flex justify-center">
+                    <div class="w-12 h-12 rounded-full bg-[#eaff4b] flex items-center justify-center pt-1">
+                        <i class="fi fi-sr-info text-3xl text-[#232a27]"></i>
+                    </div>
+                </div>
+                <p class="text-gray-100 text-center text-sm md:text-base leading-relaxed"
+                   data-aos="fade-up" 
+                   data-aos-duration="1000"
+                   data-aos-delay="200">
+                    KulturaTrip berdedikasi menghadirkan pengalaman perjalanan terbaik ke berbagai destinasi eksotis di Indonesia. Dengan tim berpengalaman dan layanan personal, kami siap membantu Anda menjelajahi keindahan alam, budaya, dan petualangan lokal—dari Bali hingga Labuan Bajo. Temukan perjalanan impian Anda bersama kami, dengan mudah, aman, dan penuh kesan.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="Testimoni" class="py-8 md:py-16 bg-[#232a27]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-[#eaff4b] tracking-wide mb-8 md:mb-12">Testimoni</h2>
+            <div class="swiper testimonialSwiper">
+                <div class="swiper-wrapper cursor-grab">
+                    <div class="swiper-slide bg-[#232a27] rounded-lg">
+                        <div class="w-full md:w-3/4 lg:w-1/2 mx-auto py-5 border-2 border-[#eaff4b] rounded-lg">
+                            <p class="text-gray-100 text-center text-sm md:text-base leading-relaxed">"Website ini bener-bener ngebantu waktu saya nyari tiket liburan dadakan. Proses booking-nya cepat, pilihan destinasinya lengkap, dan harganya juga bersaing. Recommended banget buat yang suka traveling!"</p>
+                            <p class="text-[#b6c23f] text-center text-sm md:text-base leading-relaxed font-bold italic mt-4">Rani A., Jakarta</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-[#232a27] rounded-lg">
+                        <div class="w-full md:w-3/4 lg:w-1/2 mx-auto py-5 border-2 border-[#eaff4b] rounded-lg">
+                            <p class="text-gray-100 text-center text-sm md:text-base leading-relaxed">"Saya pakai website ini untuk liburan keluarga ke Bali, dan semuanya berjalan lancar. Mulai dari pemesanan hotel, tiket pesawat, sampai sewa mobil—semuanya bisa diatur di satu tempat. Praktis dan terpercaya!"</p>
+                            <p class="text-[#b6c23f] text-center text-sm md:text-base leading-relaxed font-bold italic mt-4">Febri L., Yogyakarta</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-[#232a27] rounded-lg">
+                        <div class="w-full md:w-3/4 lg:w-1/2 mx-auto py-5 border-2 border-[#eaff4b] rounded-lg">
+                            <p class="text-gray-100 text-center text-sm md:text-base leading-relaxed">"Customer service-nya responsif dan sangat membantu waktu saya salah input tanggal. Mereka sigap bantu ubah jadwal tanpa tambahan biaya. Saya memiliki pengalaman terbaik selama pesan lewat platform online!"</p>
+                            <p class="text-[#b6c23f] text-center text-sm md:text-base leading-relaxed font-bold italic mt-4">Andi S., Surabaya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="contact" class="py-16 bg-[#121815]">
+        <div class="container mx-auto px-4 ">
+            <h2 class="text-3xl font-bold text-center text-[#eaff4b] tracking-wide mb-12">Hubungi Kami</h2>
+            <div class="max-w-md mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Nama Anda" class="w-full px-4 py-2 border border-[#3a423e] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#eaff4b] bg-[#232a27] text-gray-100">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Email Anda" class="w-full px-4 py-2 border border-[#3a423e] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#eaff4b] bg-[#232a27] text-gray-100">
+                    </div>
+                    <div>
+                        <textarea placeholder="Pesan Anda" rows="5" class="w-full px-4 py-2 border border-[#3a423e] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#eaff4b] bg-[#232a27] text-gray-100"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-[#eaff4b] hover:bg-[#d4e900] text-[#232a27] font-bold py-3 px-6 rounded-lg transition-colors">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#232a27] text-gray-100 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h5 class="text-xl font-bold text-[#eaff4b] tracking-wide">KulturaTrip</h5>
+                    <p class="text-gray-100">Jelajahi keindahan Nusantara bersama kami.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-100 hover:text-[#eaff4b] transition-colors"><i class="fab fa-facebook text-2xl"></i></a>
+                    <a href="#" class="text-gray-100 hover:text-[#eaff4b] transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="#" class="text-gray-100 hover:text-[#eaff4b] transition-colors"><i class="fab fa-twitter text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
